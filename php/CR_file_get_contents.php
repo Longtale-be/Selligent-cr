@@ -77,7 +77,7 @@
 						$msgBodyAttrStr = $messagent_bodyattr->item(0)->nodeValue;
 						$msgBodyStr = $messagent_body->item(0)->nodeValue;
 						// Extra: Replace all URLS with own URL for SMC
-					    $msgBodyStr = str_replace("https://". $client . "." . $domain . $optiext,siteURL() . $client ."/" . basename($_SERVER['PHP_SELF']), $msgBodyStr);
+					    $msgBodyStr = str_replace("https://". $client . "." . $domain . $optiext,siteURL()), $msgBodyStr);
 					    return array(
 					    	'head' => $msgHeadStr,
 					    	'body_attr' => $msgBodyAttrStr,
@@ -138,7 +138,7 @@
 		// Check the protocol of the domain
 	    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 	    // Get the domain name
-	    $domainName = $_SERVER['HTTP_HOST'].'/';
+	    $domainName = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	    return $protocol.$domainName;
 	}
 
