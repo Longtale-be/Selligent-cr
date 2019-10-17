@@ -27,7 +27,7 @@
 			$optiext = "/optiext/optiextension.dll"; 
 
 			// Do the domain switch || Note: There might be more domains
-			(strtoupper($newDomain)==true) ? $domain = "slgnt.eu" : $domain = "emsecure.net";
+			($newDomain==true) ? $domain = "slgnt.eu" : $domain = "emsecure.net";
 			// Get POST params
 			$parameters .= loopParameters($_POST, $id_param);
 			// Get GET params
